@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content=""><title>PowerShell</title>
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-772fa8b3.css">
+	<link rel="stylesheet" href="/_app/assets/pages/blog/PowerShell.svelte-241a578e.css">
+	</head>
+	<body>
+		<div>
+
+
+<header class="svelte-xwjbyr"><div class="corner svelte-xwjbyr"></div>
+
+	<nav class="svelte-xwjbyr"><svg viewBox="0 0 2 3" aria-hidden="true" class="svelte-xwjbyr"><path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" class="svelte-xwjbyr"></path></svg>
+		<ul class="svelte-xwjbyr"><li class="svelte-xwjbyr"><a sveltekit:prefetch href="/" class="svelte-xwjbyr">Resume</a></li>
+
+			<li class="svelte-xwjbyr"><a sveltekit:prefetch href="/blog" class="svelte-xwjbyr">Blog</a></li>
+
+
+			</ul>
+		<svg viewBox="0 0 2 3" aria-hidden="true" class="svelte-xwjbyr"><path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" class="svelte-xwjbyr"></path></svg></nav>
+
+	<div class="corner svelte-xwjbyr"></div>
+</header>
+
+<main class="svelte-1izrdc8">
+	
+
+
+
+
+
+
+<div class="mainContainer svelte-scsuq8"><div class="sectionTitle svelte-scsuq8">Get Help!!!
+</div>
+
+You can run the Update-Help Command btw to get the newest.
+<pre><code>Update-Help</code></pre>
+
+To display information on one page.
+<pre><code>Get-Help &lt;cmdlet&gt;
+Help &lt;cmdlet&gt;</code></pre>
+
+To display information on multiple pages.
+<pre><code>&lt;cmdlet&gt; -?</code></pre>
+
+To display examples of a command.
+<pre><code>Get-Help &lt;cmdlet&gt; -example</code></pre>
+
+To display detailed information of a command.
+<pre><code>Get-Help &lt;cmdlet&gt; -detailed</code></pre>
+
+To display all the information of a command.
+<pre><code>Get-Help &lt;cmdlet&gt; -full</code></pre>
+
+
+To display information of a command in a new window. you can ctl+f in this.&quot;
+<pre><code>Get-Help &lt;cmdlet&gt; -ShowWindow</code></pre>
+
+
+If you want to see all the commands.
+<pre><code>Get-Command</code></pre>
+<pre><code>Get-Command | more</code></pre>
+<pre><code>get-help get-command - ShowWindow</code></pre>
+
+<div class="sectionTitle svelte-scsuq8">Formats</div>
+
+<pre><code> 
+Format-Wide -
+Format-List -
+Format-Table -
+Format-Custom -
+
+Examples:
+Get-Process | Format-Wide
+Get-Process | Format-Wide - column 5
+Get-Process | Format-List&quot;
+Get-Process -Name powershell | Format-List -Property ProcessName,FileVersion,Id
+To Get all the properties you can use the WildCard
+Get-Process -Name powershell | Format-List -Property *
+</code></pre>
+
+<div class="sectionTitle svelte-scsuq8">Get-Member</div>
+<pre><code> 
+ &#39;$sName = &quot;Hello World&quot;&#39;
+ &#39;$sName | Get-Member&#39;
+ &#39;$sName.Length&#39;
+ </code></pre>
+
+
+<div class="sectionTitle svelte-scsuq8">Variables</div>
+<pre><code> 
+ &#39;$sName = &quot;Hello World&quot;&#39;
+ &#39;[datetime]$dtDateOrTime = 3:00pm&#39;
+ &#39;[String]$sString = &quot;hello&quot;&#39;
+ &#39;[char]$chCharacter = a&#39;
+ &#39;[double]$dFloatingNumber = 13.1&#39;
+ &#39;[int]$iCount = 13&#39;
+ &#39;[boolean]$bBoolean = true&#39;
+ &quot;&quot;
+ &quot;Constant is a write-protected variable&quot;
+ &quot;New-Variable cmdlet is used to create constants&quot;
+ &#39;ex. $serverIP =&quot;10.10.10.10&quot;&#39;
+ &quot;Set-Variable severIP -option ReadOnly&quot;
+ &quot;Set-Variable severIP -option Constant -value &#39;12.12.12.12&#39;&quot;
+ </code></pre>
+
+
+<div class="sectionTitle svelte-scsuq8">comparison operators</div>
+<pre><code> 
+ &quot;-eq Equal to&quot;
+ &quot;-lt Less Than&quot;
+ &quot;-gt Greater than&quot;
+ &quot;-ge Greater than or equal to&quot;
+ &quot;-le Less than or equal to&quot;
+ &quot;-ne Note equal to (!=)&quot;
+ &quot;&quot;
+ &quot;Logical operators:&quot;
+ &quot;-not  Not&quot;
+ &quot;! Not&quot;
+ &quot;-and AND&quot;
+ &quot;-or OR&quot;
+ &quot;&quot;
+ &quot;ex.&quot;
+ &#39;$a=6&#39;
+ &#39;$b=6&#39;
+ &#39;$a -eq $b&#39;
+ &quot;&quot;
+ &#39;($a -eq 100) -or ($a -gt $b)&#39;
+ &quot;&quot;
+ &#39;$a=&quot;abc&quot;&#39;
+ &#39;$b=&quot;ABC&quot;&#39;
+ &#39;$a -ieq $b   = true&#39;
+ &#39;$a -ceq $b   = false&#39;
+ &quot;&quot;
+ &quot;&quot;
+ &#39;$dtDate = Get-Date&#39;
+ &#39;if($dtDate.day -ne 12){ &quot;today&quot;} else{ &quot;not today&quot;}&#39;
+ </code></pre>
+
+<div class="sectionTitle svelte-scsuq8">If Statment</div>
+<pre><code> 
+ &quot;If(condition) {run this code}&quot;
+ &quot;ElseIf (condition) {run this code}&quot;
+ &quot;Else {Run this code}&quot;
+ </code></pre>
+
+<div class="sectionTitle svelte-scsuq8">Looping</div>
+<pre><code> 
+ &quot;For Each-Object&quot;
+ &quot;For&quot;
+ &quot;While&quot;
+ &quot;Do While&quot;
+ &quot;Do Until&quot;
+ &quot;&quot;
+ &quot;&quot;
+ &#39;$a=5,6,4,3,2&#39;
+ &#39;$a | ForEach { $_}&#39;
+ &quot;&quot;
+ &#39;ForEach ($Value in $a){ $Value}&#39;
+ &quot;&quot;
+ &#39;For ($a=1; $a -le 5; $a++) { $a}&#39;
+ &quot;&quot;
+ &#39;while($val -ne 10) { $val++ ;  $val }&#39;
+ &quot;&quot;
+ &#39;$a = 1&#39;
+ &#39;do { $a; $a++}&#39;
+ &#39;while ($a -lt 0)&#39;
+ &quot;&quot;
+ &#39;$a = 1&#39;
+ &#39;do { $a; $a++}&#39;
+ &#39;until ($a -gt 5)&#39;
+ </code></pre>
+
+
+<div class="sectionTitle svelte-scsuq8">.Net Objects</div>
+<pre><code> 
+ &quot;In powershell everything is a .net object&quot;
+ &quot;Get-Member gets information about the .NET object.&quot;
+ &quot;the .net framework is a bunch of classes.. objects are created based on classes.&quot;
+ &quot;There are three concepts to understand:&quot;
+ &quot;.NET Framework Classes&quot;
+ &quot;objects&quot;
+ &quot;Powershell commands&quot;
+ &quot;note for self maybe learn to build some classes and objects.&quot;
+ </code></pre>
+
+
+ <div class="sectionTitle svelte-scsuq8">Get-ChildItem</div>
+<pre><code> 
+ dir, gci, ls
+ gci c:*.* -include *.txt
+ </code></pre>
+
+
+<div class="sectionTitle svelte-scsuq8">pipeline</div>
+<pre><code> 
+ &quot;Pipes information from one command to another&quot;
+ &#39;Get-Service | where-Object {$_.DisplayName -Match &quot;MS&quot;}&#39;
+ &#39;$_ is the current information in the pipline}&#39;
+ </code></pre>
+
+
+<div class="sectionTitle svelte-scsuq8">Creating scripts</div>
+<pre><code> 
+ &quot;You can do this in any editor but Windows PowerShell ISE can be used &quot;
+ &quot;By default executing PowerShell scripts might be restricted&quot;
+ &quot;type - Get-ExecutionPolicy ... if it is Restricted you need to Set-ExecutionPolicy RemoteSigned&quot;
+ &quot;to run a script, the path and file name is required&quot;
+Wrire-Host &quot;Get-Location | .PowershellNateNotes.ps1&quot;
+</code></pre>
+
+<div class="sectionTitle svelte-scsuq8">HotKeys</div>
+<pre><code> 
+ &quot;EnterKey - displays the next line.&quot;
+ &quot;Spacebar - displays everything to the end of the page.&quot;
+
+ </code></pre>
+
+<div class="sectionTitle svelte-scsuq8">Regular expression</div>
+<pre><code> 
+ &quot;Get-Help about_regular_expression&quot;
+ &quot;&quot;
+ &quot;Literal matches:&quot;
+ &#39;&quot;Microsoft&quot; -match &quot;soft&quot;&#39;
+ &#39;&quot;Microsoft&quot; -cmatch &quot;Soft&quot;&#39;
+ &quot;&quot;
+ &quot;Pattern matches:&quot;
+ &quot;. (period) matched a single character&quot;
+ &quot;[aeiou] matched at least one character specified within the brackets&quot;
+ &quot;[b-f] matched at least one character specified within a range&quot;
+ &quot;[^bfghjk] matched any character except those within the brackets&quot;
+ &quot;^ matches characters locasted at the beginning of a string&quot;
+ &quot;$ matches characters located at the end of a string&quot;
+ &quot;*matched zero or more occurrences of the preceding character&quot;
+ &quot;? matches zero or one occurrence of the preceding character&quot;
+ &quot; matches the character following the escape () character&quot;
+ &quot;&quot;
+ &quot;Regular Expression Qualifiers:&quot;
+ &quot;* must match zero or more times&quot;
+ &quot;+ must match one or more times&quot;
+ &quot;? Must match no more than one time&quot;
+ &quot;{n} must match n times&quot;
+ &quot;{n,} must at least n matches&quot;
+ &quot;{n,m} must match at least n times, but nor more than m times&quot;
+ &quot;&quot;
+ &quot;Regular Expression Shortcuts&quot;
+ &quot;d matches any decimal digit, same as [0-9]&quot;
+ &quot;w matches any word character, same as [0-9A-Za-z]&quot;
+ &quot;D matches any non-digit&quot;
+ &quot;W matches any non-word character such as space&quot;
+ &quot;S matched any non-whitespace charater&quot;
+ &quot;&quot;
+ &#39;ex. $ip=&quot;192.168.15.21&quot;&#39;
+ &#39;$rx=&quot;d{1,3}.d{1,3}.d{1,3}.d{1,3}&quot;&#39;
+ &#39;$ip -match $rx&#39;
+ &quot;&quot;
+ &quot;&quot;
+ </code></pre>
+
+
+
+
+
+ <div class="sectionTitle svelte-scsuq8">Paramaters</div>
+<pre><code>
+ &quot;Simple Param Block:&quot;
+ &#39;Param([string]$variablename)&#39;
+ &#39;&#39;
+ &#39;Full param block&#39;
+ &#39;Param([Parameter(Mandatory=$true)][string]$variablename)&#39;
+ &#39;&#39;
+ &#39;ex.&#39;
+ &#39;Param([Parameter(Mandatory=$true)][string]$Username)&#39;
+ &#39;$a = $Username&#39;
+ &#39; &quot;Hello $a!&quot;&#39;
+ &#39;&#39;
+
+
+ </code></pre>
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+	
+
+
+</div></main>
+
+<footer class="svelte-1izrdc8"><p><a href="https://www.reddit.com/r/ContagiousLaughter/top/?t=month" class="svelte-1izrdc8">Get Some Happiness!!!</a></p>
+</footer>
+
+</div>
+	</body>
+</html>
