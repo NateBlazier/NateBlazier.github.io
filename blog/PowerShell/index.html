@@ -6,7 +6,7 @@
 		<link rel="icon" href="../favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="content-security-policy" content=""><title>PowerShell</title>
-	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-772fa8b3.css">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-56fef8b3.css">
 	<link rel="stylesheet" href="/_app/assets/pages/blog/PowerShell.svelte-241a578e.css">
 	</head>
 	<body>
@@ -66,6 +66,19 @@ If you want to see all the commands.
 <pre><code>Get-Command</code></pre>
 <pre><code>Get-Command | more</code></pre>
 <pre><code>get-help get-command - ShowWindow</code></pre>
+
+ABOUT PAGES
+<pre><code>Help about_*</code></pre>
+
+-Category (finger smashing with show you an error of what you can do.)
+<pre><code>Help -Category sdfsdf</code></pre>
+
+-Category (finger smashing with show you an error of what you can do.)
+<pre><code>get-service | ConvertTo-html -Property name,status | out-file c:	est.htm | c:	est.htm </code></pre>
+
+-whatif
+
+
 
 <div class="sectionTitle svelte-scsuq8">Formats</div>
 
@@ -283,6 +296,13 @@ Wrire-Host &quot;Get-Location | .PowershellNateNotes.ps1&quot;
 
  </code></pre>
 
+
+
+<div class="sectionTitle svelte-scsuq8">Statement Separator</div>
+to run one command after another use semicolons
+<pre><code> 
+ cls ; get-help about_Eventlogs
+</code></pre>
 
 
 
